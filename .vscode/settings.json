@@ -2,5 +2,7 @@
     "ocaml.sandbox": {
         "kind": "opam",
         "switch": "cs3110-2023fa"
-    }
+    },
+    "editor.indentSize": 4,
+    "editor.tabSize": 2,
 }

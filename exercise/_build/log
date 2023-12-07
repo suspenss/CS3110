@@ -1,0 +1,29 @@
+# dune build
+# OCAMLPARAM: unset
+# Shared cache: disabled
+# Shared cache location: /Users/epoche/.cache/dune/db
+# Workspace root: /Users/epoche/Desktop/learn/cs3110/exercise
+# Auto-detected concurrency: 12
+# Dune context:
+#  { name = "default"
+#  ; kind = "default"
+#  ; profile = Dev
+#  ; merlin = true
+#  ; fdo_target_exe = None
+#  ; build_dir = In_build_dir "default"
+#  ; installed_env =
+#      map
+#        { "INSIDE_DUNE" :
+#            "/Users/epoche/Desktop/learn/cs3110/exercise/_build/default"
+#        ; "OCAML_COLOR" : "always"
+#        ; "OPAMCOLOR" : "always"
+#        }
+#  ; instrument_with = []
+#  }
+$ /Users/epoche/.opam/cs3110-2023fa/bin/ocamlc.opt -config > /var/folders/n7/r0zmh97x3mg1x6tfm0lf082h0000gn/T/dune_6b670b_output
+$ (cd _build/default && /Users/epoche/.opam/cs3110-2023fa/bin/ocamldep.opt -modules -impl test.ml) > _build/default/.test.eobjs/dune__exe__Test.impl.d
+$ (cd _build/default && /Users/epoche/.opam/cs3110-2023fa/bin/ocamldep.opt -modules -impl ch3.ml) > _build/default/.test.eobjs/dune__exe__Ch3.impl.d
+$ (cd _build/default && /Users/epoche/.opam/cs3110-2023fa/bin/ocamlc.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -bin-annot -I .test.eobjs/byte -I /Users/epoche/.opam/cs3110-2023fa/lib/ocaml/unix -I /Users/epoche/.opam/cs3110-2023fa/lib/ounit2 -I /Users/epoche/.opam/cs3110-2023fa/lib/ounit2/advanced -I /Users/epoche/.opam/cs3110-2023fa/lib/seq -I /Users/epoche/.opam/cs3110-2023fa/lib/stdlib-shims -no-alias-deps -opaque -open Dune__exe -o .test.eobjs/byte/dune__exe__Ch3.cmo -c -impl ch3.ml)
+$ (cd _build/default && /Users/epoche/.opam/cs3110-2023fa/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I .test.eobjs/byte -I .test.eobjs/native -I /Users/epoche/.opam/cs3110-2023fa/lib/ocaml/unix -I /Users/epoche/.opam/cs3110-2023fa/lib/ounit2 -I /Users/epoche/.opam/cs3110-2023fa/lib/ounit2/advanced -I /Users/epoche/.opam/cs3110-2023fa/lib/seq -I /Users/epoche/.opam/cs3110-2023fa/lib/stdlib-shims -intf-suffix .ml -no-alias-deps -opaque -open Dune__exe -o .test.eobjs/native/dune__exe__Ch3.cmx -c -impl ch3.ml)
+$ (cd _build/default && /Users/epoche/.opam/cs3110-2023fa/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -I .test.eobjs/byte -I .test.eobjs/native -I /Users/epoche/.opam/cs3110-2023fa/lib/ocaml/unix -I /Users/epoche/.opam/cs3110-2023fa/lib/ounit2 -I /Users/epoche/.opam/cs3110-2023fa/lib/ounit2/advanced -I /Users/epoche/.opam/cs3110-2023fa/lib/seq -I /Users/epoche/.opam/cs3110-2023fa/lib/stdlib-shims -intf-suffix .ml -no-alias-deps -opaque -open Dune__exe -o .test.eobjs/native/dune__exe__Test.cmx -c -impl test.ml)
+$ (cd _build/default && /Users/epoche/.opam/cs3110-2023fa/bin/ocamlopt.opt -w @1..3@5..28@30..39@43@46..47@49..57@61..62@67@69-40 -strict-sequence -strict-formats -short-paths -keep-locs -g -o test.exe /Users/epoche/.opam/cs3110-2023fa/lib/ocaml/unix/unix.cmxa /Users/epoche/.opam/cs3110-2023fa/lib/stdlib-shims/stdlib_shims.cmxa /Users/epoche/.opam/cs3110-2023fa/lib/ounit2/advanced/oUnitAdvanced.cmxa /Users/epoche/.opam/cs3110-2023fa/lib/ounit2/oUnit.cmxa .test.eobjs/native/dune__exe.cmx .test.eobjs/native/dune__exe__Ch3.cmx .test.eobjs/native/dune__exe__Test.cmx)
