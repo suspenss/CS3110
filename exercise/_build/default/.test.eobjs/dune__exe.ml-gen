@@ -6,5 +6,8 @@ module Ch2 = Dune__exe__Ch2
 (** @canonical Dune__exe.Ch3 *)
 module Ch3 = Dune__exe__Ch3
 
+(** @canonical Dune__exe.Ch4 *)
+module Ch4 = Dune__exe__Ch4
+
 (** @canonical Dune__exe.Test *)
 module Test = Dune__exe__Test

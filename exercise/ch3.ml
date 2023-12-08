@@ -173,8 +173,8 @@ let is_before d1 d2 =
     y1 < y2 || (y1 = y2 && m1 < m2) || (y1 = y2 && m1 = m2 && d1 < d2)
 ;;
 
-let take = function
-  | None -> failwith "None take"
+let take_option = function
+  | None -> failwith "None take_option"
   | Some x -> x
 ;;
 
@@ -182,7 +182,9 @@ let take = function
 let rec earlist = function
   | [] -> None
   | x :: xs ->
-    (fun a b -> if is_before a b then Some a else Some b) x (take (earlist xs))
+    (fun a b -> if is_before a b then Some a else Some b)
+      x
+      (take_option (earlist xs))
 ;;
 
 (* cards *)
@@ -288,15 +290,15 @@ let rec list_max_exn : int list -> int = function
   | x :: xs -> max x (list_max_exn xs)
 ;;
 
-let rec list_max_strinng : int list -> string = function
+let list_max_strinng : int list -> string = function
   | [] -> "empty"
   | x :: xs -> list_max_exn xs |> max x |> string_of_int
 ;;
 
 (* is_bst *)
-type ('a, 'b) tree =
+type ('a, 'b) tree' =
   | Leaf
-  | Node of ('a * 'b) * ('a, 'b) tree * ('a, 'b) tree
+  | Node of ('a * 'b) * ('a, 'b) tree' * ('a, 'b) tree'
 
 let rec is_bst = function
   | Leaf -> true

@@ -24,6 +24,10 @@ let test_ch3 =
           assert_equal (sort_by_desecnding []) [])
        ; ("test for library puzzle "
           >:: fun _ -> assert_equal (last_element [ 2; 5; 7; 0 ]) 0)
+       ; ("test for is_unimodal"
+          >:: fun _ ->
+          assert (is_unimodal [ 1; 2; 3; 4 ]);
+          assert (is_unimodal [ 1; 2; 3; 4; 3; 2; 1 ]))
        ]
 ;;
 
