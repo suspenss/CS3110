@@ -1,4 +1,0 @@
-(lang dune 3.12)
-(name exercise)
-(sections (lib .))
-(files (lib (META dune-package opam)))

@@ -1,5 +1,0 @@
-lib: [
-  "_build/install/default/lib/exercise/META"
-  "_build/install/default/lib/exercise/dune-package"
-  "_build/install/default/lib/exercise/opam"
-]
