@@ -10,5 +10,5 @@ profile=janestreet
 # doc-comments-padding=4
 # cases-exp-indent=4
 # break-cases=toplevel
-# if-then-else=k-r
+if-then-else=k-r
 margin=80
