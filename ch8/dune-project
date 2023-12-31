@@ -1,0 +1,21 @@
+(lang dune 3.12)
+
+(name ds)
+
+(generate_opam_files true)
+
+(source
+ (github epochess/cs3110))
+
+(authors "epochess")
+
+(package
+ (name ds)
+ (allow_empty)
+ (synopsis "A short synopsis")
+ (description "A longer description")
+ (depends ocaml dune)
+ (tags
+  (topics "to describe" your project)))
+
+; See the complete stanza docs at https://dune.readthedocs.io/en/stable/dune-files.html#dune-project
