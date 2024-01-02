@@ -77,7 +77,7 @@ module HashMap = struct
 
   let capacity table = Array.length table.buckets
 
-  let load_foactor table =
+  let load_factor table =
     float_of_int table.size /. float_of_int (capacity table)
   ;;
 
@@ -108,7 +108,7 @@ module HashMap = struct
   ;;
 
   let resize_if_needed table =
-    match load_foactor table with
+    match load_factor table with
     | x when x >= 2.0 -> rehash table (capacity table * 2)
     | x when x <= 0.5 -> rehash table (capacity table / 2)
     | _ -> ()
