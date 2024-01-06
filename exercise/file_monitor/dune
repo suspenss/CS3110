@@ -1,0 +1,4 @@
+(executable
+ (public_name file_monitor)
+ (name main)
+ (libraries lwt.unix lwt))

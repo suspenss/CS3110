@@ -1,3 +1,4 @@
 (library
  (name exercise)
- (modules ch2 ch3 ch4 ch5 algebra ch7 ch8))
+ (modules ch2 ch3 ch4 ch5 algebra ch7 ch8)
+ (libraries lwt lwt.unix))
