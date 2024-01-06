@@ -1,0 +1,12 @@
+(lang dune 3.12)
+
+(using menhir 2.1)
+
+(package
+ (allow_empty)
+ (name calculator)
+ (synopsis "A short synopsis")
+ (description "A longer description")
+ (depends ocaml dune)
+ (tags
+  (topics "to describe" your project)))
