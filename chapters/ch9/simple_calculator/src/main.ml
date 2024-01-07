@@ -10,12 +10,12 @@ let parse : string -> expr = fun s ->
 (* [string_of_val e] convert expr [e] to string *)
 let string_of_val : expr -> string = function
   | Int i -> string_of_int i
-  | Binop _ ->  failwith "Invaild token"
+  | _     ->  failwith "Invaild token"
 ;;
 
 let is_val : expr -> bool = function
-  | Int _ -> true
-  | Binop _ -> false
+  | Int _   -> true
+  | _       -> false
 ;;
 
 let rec step : expr -> expr = function
@@ -27,6 +27,8 @@ let rec step : expr -> expr = function
 and step_binop = function
   | Binop (Add, Int a, Int b) -> Int (a + b)
   | Binop (Mul, Int a, Int b) -> Int (a * b)
+  | Binop (Sub, Int a, Int b) -> Int (a - b)
+  | Binop (Div, Int a, Int b) -> Int (a / b)
   | _ -> failwith ""
 ;;
 
