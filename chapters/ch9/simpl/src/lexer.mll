@@ -11,8 +11,8 @@ let id = letter+
 rule read = 
     parse (* here is keyword _*parse*_ *)
     | white { read lexbuf }
-    | "True" { TRUE }
-    | "False" { FALSE }
+    | "true" { TRUE }
+    | "false" { FALSE }
     | "<=" { LEQ }
     | "*" { TIMES }
     | "+" { PLUS }

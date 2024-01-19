@@ -13,6 +13,7 @@ bop ::= + | * | <=
 
 v ::= i | b 
 
+/* 
 i -/->
 b -/-> 
 x -/-> 
@@ -30,7 +31,15 @@ if false then e2 else e3 --> e3
 
 let x = e1 in e2 --> let x = e1' in e2 
   if e1 --> e1' 
-let x = v in e2 --> e2{v/x}
+let x = v in e2 --> e2{v/x} 
+ */
 
 
-
+/*
+  substitution:
+  i{e/x} = i
+  b{e/x} = b
+  x{e/x} = e
+  y{e/x} = y
+  (e1 bop e2){e/x} = e1{e/x} bop e2{e/x}
+*/
