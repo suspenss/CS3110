@@ -1,0 +1,5 @@
+e ::= x | e1 e2 | \x -> e
+
+v ::= \x -> e
+
+x ::= <identifier>
