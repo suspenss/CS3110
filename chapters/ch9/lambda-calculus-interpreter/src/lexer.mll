@@ -12,6 +12,6 @@ rule read =
   | "(" { LPAREN }
   | ")" { RPAREN }
   | "." { ARROW }
-  | "\\" { FUN }
+  | "^" { FUN }
   | id { ID (Lexing.lexeme lexbuf) }
   | eof { EOF }

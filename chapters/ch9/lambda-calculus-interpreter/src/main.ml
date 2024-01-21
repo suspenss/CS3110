@@ -6,6 +6,8 @@ let parse (s : string) : expr =
   ast
 ;;
 
+let unbound_var_err = "unbound variable error"
+
 module Fv = struct
   (** fv *)
   module VarSet = Set.Make (String)
@@ -21,6 +23,7 @@ module Fv = struct
   let is_fv (x : string) (e : expr) : bool = mem x (fv e)
 end
 
+(** [gensym ()] is generate a new variable name *)
 let gensym =
   let counter = ref 0 in
   fun () ->
@@ -34,6 +37,7 @@ let is_val : expr -> bool = function
   | App _ -> false
 ;;
 
+(** [replace e older newer] is [e] replace [newer] with [older] *)
 let rec replace (e : expr) (older : string) (newer : string) : expr =
   match e with
   | Var x -> if x = older then Var newer else e
@@ -49,7 +53,7 @@ let rec subst (e : expr) (v : expr) (x : string) : expr =
   | Fun (y, e') ->
     if y = x then
       e
-    else if not (Fv.is_fv y e') then
+    else if not (Fv.is_fv y v) then
       Fun (y, subst e' v x)
     else (
       let fresh = gensym () in
@@ -59,12 +63,13 @@ let rec subst (e : expr) (v : expr) (x : string) : expr =
 
 (** [step e] is e' which is e evaluate signle step *)
 let rec step : expr -> expr = function
-  | Var _ | Fun _ -> failwith "can't go step"
+  | Var _ | Fun _ -> failwith unbound_var_err
   | App (e1, e2) ->
     (* call by value*)
     if is_val e2 then (
       match e1 with
       | Fun (x, e) -> subst e e2 x
+      | App _ -> App (step e1, e2)
       | _ -> failwith "Application only with function")
     else
       App (e1, step e2)

@@ -1,4 +1,3 @@
-# CS3110
+Textbook link: https://cs3110.github.io/textbook/        
 
-textbook link: https://cs3110.github.io/textbook/         
-record link: [click this](https://www.notion.so/epoches/cs3110-ocaml-language-qucik-note-15badfeceaed4c248f2cd43307019af5)
+Record link: [click this](https://www.notion.so/epoches/cs3110-ocaml-language-qucik-note-15badfeceaed4c248f2cd43307019af5)
